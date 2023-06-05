@@ -1,4 +1,3 @@
 #!/bin/bash
-echo "#!/usr/bin/python3" > main.py
-echo $PYCODE >> main.py
-python3 main.py
+#!/usr/bin/python3
+echo $PYCODE
