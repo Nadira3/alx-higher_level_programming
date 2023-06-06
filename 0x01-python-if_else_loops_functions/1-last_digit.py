@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-num_len = len(str(number))
-last = int(str(number)[num_len - 1])
+last = abs(number) % 10
 if number < 0:
     last *= -1
 if last > 5:
