@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for i in range(100):
+for i in range(1, 100):
     if i > int((str(i))[::-1]):
         continue
     if i > 9:
