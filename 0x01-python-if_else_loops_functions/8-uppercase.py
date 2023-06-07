@@ -4,6 +4,7 @@ def uppercase(str):
     for i in range(n):
         p = ord(str[i])
         if p >= 97 and p <= 122:
-            print(f"{p - 32:c}" if i < n - 1 else f"{p - 32:c}\n", end="")
+            p -= 32
+            print("{:c}".format(p) if i < n - 1 else "{:c}\n".format(p), end="")
         else:
-            print(f"{p:c}" if i < n - 1 else f"{p:c}\n", end="")
+            print("{:c}".format(p) if i < n - 1 else "{:c}\n".format(p), end="")
