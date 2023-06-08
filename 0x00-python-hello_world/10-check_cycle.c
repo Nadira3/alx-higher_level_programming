@@ -1,6 +1,8 @@
 #include "lists.h"
 /**
- * check_cycle - checks if a list is a circular list
+ * iscycle - checks if a list is a circular list
+ * @node: node to be compared in the list
+ * @n: position of node in the list
  * @list: list
  * Return: 0 || 1
  */
@@ -19,6 +21,11 @@ int iscycle(listint_t *node, int n, listint_t *list)
 	}
 	return (0);
 }
+/**
+ * check_cycle - checks if a list is a circular list
+ * @list: list
+ * Return: 0 || 1
+ */
 int check_cycle(listint_t *list)
 {
 	listint_t *ptr = NULL;
