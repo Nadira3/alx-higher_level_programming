@@ -46,7 +46,6 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *ptr, *ptr2;
-	int i = 0;
 
 	ptr = list;
 	ptr2 = list;
