@@ -4,20 +4,35 @@
  * @list: list
  * Return: 0 || 1
  */
-int check_cycle(listint_t *list)
+int iscycle(listint_t *node, int n, listint_t *list)
 {
-	listint_t *ptr = NULL, *ptr2 = NULL;
+	listint_t *ptr = NULL;
+	int i = 0;
 
 	ptr = list;
-	ptr2 = list;
+	while (i < n && ptr->next)
+	{
+		i++;
+		ptr = ptr->next;
+		if (ptr->next == node->next && i < n && ptr != list)
+			return (1);
+	}
+	return (0);
+}
+int check_cycle(listint_t *list)
+{
+	listint_t *ptr = NULL;
+	int i = 0;
+
+	ptr = list;
 	if (list)
 	{
-		while (ptr->next && ptr2)
+		while (ptr->next)
 		{
-			ptr2 = ptr->next->next;
-			if (ptr->next == list || ptr->next == ptr2)
+			if (ptr->next == list || iscycle(ptr, i, list))
 				return (1);
 			ptr = ptr->next;
+			i++;
 		}
 	}
 	return (0);
