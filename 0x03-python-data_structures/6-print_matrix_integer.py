@@ -6,4 +6,4 @@ def print_matrix_integer(matrix=[[]]):
         if not top:
             print()
         for j in top:
-                print("{:d}".format(j), end=" " if j != top[-1] else '\n')
+            print("{:d}".format(j), end=" " if j != top[-1] else '\n')
