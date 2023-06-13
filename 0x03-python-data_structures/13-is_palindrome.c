@@ -27,7 +27,6 @@ int is_palindrome(listint_t **head)
 			pal = pal->next;
 		if (ptr->n != pal->n)
 			return (0);
-		printf("i: %d, list_len: %d, ptr->n: %d, pal->n: %d\n", i, list_len / 2, ptr->n, pal->n);
 		len--;
 		ptr = ptr->next;
 		pal = *head;
