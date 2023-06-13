@@ -6,4 +6,4 @@ def max_integer(my_list=[]):
             my_list[i + 1] = my_list[i]
             my_list[i] = temp
     maxi = my_list[len(my_list) - 1] if len(my_list) > 0 else None
-    return ("{:d}".format(maxi))
+    return ("{}".format(maxi))
