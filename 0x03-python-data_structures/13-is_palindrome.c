@@ -6,31 +6,24 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr, *pal;
+	listint_t *pam, *pal;
 	int list_len = 0, i, j = 0, len;
 
 	if (!head)
 		return (0);
 	pal = *head;
-	ptr = *head;
+	pam = *head;
 
-	while (ptr)
+	while (pal && pal->next)
 	{
-		ptr = ptr->next;
-		list_len++;
-	}
-	ptr = *head;
-	len = list_len;
-	for (i = 0; i < (list_len % 2 == 0 ? list_len / 2 : list_len / 2 + 1); i++)
-	{
-		while (j++ < len - 1)
+		if (!(pal->next->next))
+		{
 			pal = pal->next;
-		if (ptr->n != pal->n)
-			return (0);
-		len--;
-		ptr = ptr->next;
-		pal = *head;
-		j = 0;
+			break;
+		}
+		pam = pam->next;
+		pal = pal->next->next;
 	}
-	return (1);
+	/* at this point pam is at the middle of the list */
+	printf("pal->n: %d, pam->next: %d\n", pal->n, pam->n);
 }
