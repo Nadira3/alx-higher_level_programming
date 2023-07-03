@@ -11,7 +11,6 @@ class Square:
         size: to compute the area of the square
         many others
     """
-
     def __init__(self, size=0):
 
         if not isinstance(size, int):
@@ -22,5 +21,10 @@ class Square:
 
         self.__size = size
 
+    """
+        area: computes the area of a square
+
+        Return: area of a square of size 'size'
+    """
     def area(self):
         return self.__size ** 2
