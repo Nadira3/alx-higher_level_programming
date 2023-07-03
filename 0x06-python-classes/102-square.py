@@ -36,36 +36,42 @@ class Square:
     @property
     def area(self):
         return self.__size ** 2
+
     @area.setter
     def area(self):
         self.__area = self.__size ** 2
-    
-    def  __eq__(self, other):
+
+    def __eq__(self, other):
         if self.__area == other.__area:
             return True
         else:
             return False
-    def  __ne__(self, other):
+
+    def __ne__(self, other):
         if self.__area != other.__area:
             return True
         else:
             return False
-    def  __lt__(self, other):
+
+    def __lt__(self, other):
         if self.__area < other.__area:
             return True
         else:
             return False
-    def  __gt__(self, other):
+
+    def __gt__(self, other):
         if self.__area > other.__area:
             return True
         else:
             return False
-    def  __le__(self, other):
+
+    def __le__(self, other):
         if self.__area <= other.__area:
             return True
         else:
             return False
-    def  __ge__(self, other):
+
+    def __ge__(self, other):
         if self.__area >= other.__area:
             return True
         else:
