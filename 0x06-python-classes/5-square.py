@@ -39,6 +39,8 @@ class Square:
         my_print: prints a square
     """
     def my_print(self):
+
         for count in range(self.__size):
-            print("#" * self.__size)
+            end = "\n" if count != self.__size - 1 else ""
+            print("#" * self.__size, end=end)
         print()
