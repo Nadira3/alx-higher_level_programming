@@ -12,7 +12,7 @@ class Square:
         many others
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
+        self.size = size
         self.position = position #initially had __ but didnt work
 
     @property
