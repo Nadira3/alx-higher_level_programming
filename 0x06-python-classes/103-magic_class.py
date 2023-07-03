@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import math
 """
     MagicClass: finds the area and circumference
     of a circle
