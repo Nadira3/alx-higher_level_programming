@@ -74,5 +74,9 @@ class SinglyLinkedList:
         else:
             while nodePtr.next_node and nodePtr.next_node.data < data:
                 nodePtr = nodePtr.next_node
-            newNode.next_node = nodePtr.next_node
-            nodePtr.next_node = newNode
+            if nodePtr == self.__head and nodePtr.data > data:
+                newNode.next_node = nodePtr
+                self.__head = newNode
+            else:
+                newNode.next_node = nodePtr.next_node
+                nodePtr.next_node = newNode
