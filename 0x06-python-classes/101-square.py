@@ -44,7 +44,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
-
     def __str__(self):
         if self.__position[1] > 0 and self.size:
             for count in range(self.__position[1]):
