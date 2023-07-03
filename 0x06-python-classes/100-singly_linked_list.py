@@ -55,10 +55,10 @@ class SinglyLinkedList:
 
     def __str__(self):
         nodePtr = self.__head
-        while nodePtr.next_node:
+        while nodePtr and nodePtr.next_node:
             print(nodePtr.data)
             nodePtr = nodePtr.next_node
-        return str(nodePtr.data)
+        return "" if not self.__head else str(nodePtr.data)
 
     def sorted_insert(self, data):
         newNode = Node(data)
@@ -66,7 +66,11 @@ class SinglyLinkedList:
         if not nodePtr:
             self.__head = newNode
         elif not nodePtr.next_node:
-            nodePtr.next_node = newNode
+            if nodePtr.data < data:
+                nodePtr.next_node = newNode
+            else:
+                newNode.next_node = nodePtr
+                self.__head = newNode
         else:
             while nodePtr.next_node and nodePtr.next_node.data < data:
                 nodePtr = nodePtr.next_node
