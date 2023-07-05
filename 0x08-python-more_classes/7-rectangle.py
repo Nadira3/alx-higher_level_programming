@@ -61,7 +61,11 @@ class Rectangle:
             return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        return self.sprint(self.__width, self.__height)
+        if self.print_symbol:
+            return self.instprint()
+        else:
+            return self.classprint(self.__width,\
+                    self.__height)
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
@@ -79,10 +83,18 @@ class Rectangle:
         cls.number_of_instances -= 1
 
     @classmethod
-    def sprint(cls, width, height):
+    def classprint(cls, width, height):
         result = ""
         for h in range(height):
             end = "" if h == height - 1 else "\n"
             result += (str(cls.print_symbol) * width)
+            result += end
+        return result
+
+    def instprint(self):
+        result = ""
+        for h in range(self.__height):
+            end = "" if h == self.__height - 1 else "\n"
+            result += (str(self.print_symbol) * self.__width)
             result += end
         return result
