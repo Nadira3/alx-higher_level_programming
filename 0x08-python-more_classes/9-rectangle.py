@@ -114,9 +114,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        elif size < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            return cls(size, size)
+        return cls(size, size)
