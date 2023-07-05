@@ -62,3 +62,15 @@ class Rectangle:
             end = "" if height == self.__height - 1 else "\n"
             print("#" * self.__width, end=end)
         return ""
+    
+    def __repr__(self):
+        result = str(self.__class__)[-11:-2] + "("
+        if self.__width:
+            result += str(self.__width)
+        if self.__height:
+            if self.__width:
+                result += ", "
+            result += str(self.__height)
+        return result + ")"
+       
+        return result
