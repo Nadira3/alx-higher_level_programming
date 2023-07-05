@@ -64,8 +64,7 @@ class Rectangle:
         if self.print_symbol:
             return self.instprint()
         else:
-            return self.classprint(self.__width,\
-                    self.__height)
+            return self.classprint(self.__width, self.__height)
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
