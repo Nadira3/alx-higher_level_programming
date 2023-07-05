@@ -71,5 +71,5 @@ class Rectangle:
             if self.__width:
                 result += ", "
             result += str(self.__height)
-#        return result + ")"
-        return f"Rectangle({self.__width}, {self.__height})"
+        return result + ")"
+#        return f"Rectangle({self.__width}, {self.__height})"
