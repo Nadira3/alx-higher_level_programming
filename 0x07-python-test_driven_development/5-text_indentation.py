@@ -15,10 +15,12 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
+    delim = ['?', '.', ':']
+
     for idx in range(len(text)):
-        if text[idx] == ' ' and text[idx - 1] in\
-                ['?', '.', ':']:
-            continue
+        if text[idx] == ' ':
+            if text[idx - 1] in delim or text[idx - 1] == ' ':
+                continue
         print(text[idx], end="")
-        if text[idx] in ['?', '.', ':']:
+        if text[idx] in delim:
             print("\n")
