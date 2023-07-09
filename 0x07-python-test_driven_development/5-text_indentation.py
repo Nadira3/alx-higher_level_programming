@@ -4,10 +4,11 @@
     text_indentation - indents a stream of text
 """
 
+
 def text_indentation(text):
 
     """
-        text_indentation - prints a text with 2 
+        text_indentation - prints a text with 2
         new lines after each of these characters: ., ? and :
     """
 
