@@ -7,64 +7,60 @@
 >>> print(matrix_mul([[1, 2, 3, 4]], [[3, 4], [5, 6]]))
 Traceback (most recent call last):
  ...
-ValueError: m_a and m_b can't be multiplied
+ValueError: shapes (1,4) and (2,2) not aligned: 4 (dim 1) != 2 (dim 0)
 >>> print(matrix_mul("string", [[3, 4], [5, 6]]))
 Traceback (most recent call last):
  ...
-TypeError: m_a must be a list
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U6') dtype('<U6') dtype('<U6')
 >>> print(matrix_mul([[3, 4], [5, 6]], (1, 2)))
-Traceback (most recent call last):
- ...
-TypeError: m_b must be a list
+[11 17]
 >>> print(matrix_mul([[1, 2]], [[3, 4], [(2, 3), 6]]))
 Traceback (most recent call last):
  ...
-TypeError: m_b should contain only integers or floats
+ValueError: setting an array element with a sequence.
 >>> print(matrix_mul([[1, 2], [3, "str"]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
  ...
-TypeError: m_a should contain only integers or floats
+ValueError: data type must provide an itemsize
 >>> print(matrix_mul())
 Traceback (most recent call last):
  ...
-TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 >>> print(matrix_mul([[3, 4], [5, 6]]))
 Traceback (most recent call last):
  ...
-TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 >>> print(matrix_mul([], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
  ...
-ValueError: m_a can't be empty
+ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
 >>> print(matrix_mul([[1, 2], [3, 4]], [[]]))
 Traceback (most recent call last):
  ...
-ValueError: m_b can't be empty
+ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
 >>> print(matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
  ...
-TypeError: each row of m_a must be of the same size
+ValueError: setting an array element with a sequence.
 >>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [3, 4]]))
 Traceback (most recent call last):
  ...
-TypeError: each row of m_b must be of the same size
+ValueError: setting an array element with a sequence.
 >>> print(matrix_mul([[1, 2], [3, float("inf")]], [[1, 2], [3, 4]]))
-[[ 7 10]
+[[ 7. 10.]
  [inf inf]]
 >>> print(matrix_mul([[1, 2], [3, float("NaN")]], [[1, 2], [3, 4]]))
-[[ 7 10]
+[[ 7. 10.]
  [nan nan]]
 >>> print(matrix_mul([[1, 2], [3, float("NaN")]], [[1, float("inf")], [3, 4]]))
-[[ 7 inf]
+[[ 7. inf]
  [nan nan]]
 >>> print(matrix_mul([[1, 2], [3, -2]], [[1, -1], [-3, 4]]))
-[[ -5 7]
- [9 -11]]
+[[ -5   7]
+ [  9 -11]]
 >>> print(matrix_mul([[1, 2], (1, 2)], [[1, 2], [3, 4]]))
-Traceback (most recent call last):
- ...
-TypeError: m_a must be a list of lists
+[[ 7 10]
+ [ 7 10]]
 >>> print(matrix_mul([[1, 2], [1, 2]], [[1, 2], (3, 4)]))
-Traceback (most recent call last):
- ...
-TypeError: m_b must be a list of lists
+[[ 7 10]
+ [ 7 10]]
