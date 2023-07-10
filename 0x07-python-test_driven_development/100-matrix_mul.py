@@ -49,7 +49,7 @@ def matrix_mul(m_a, m_b):
         ans = []
         v = 0
         x = 0
-        while v < len(m_a[i]):
+        while v < len(m_b):
             n = 0
             k = 0
             j = 0
