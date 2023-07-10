@@ -12,7 +12,4 @@ def lazy_matrix_mul(m_a, m_b):
 
         Returns: product
     """
-    first_array = np.array(m_a)
-    second_array = np.array(m_b)
-
-    return np.dot(first_array, second_array)
+    return np.dot(m_a, m_b)

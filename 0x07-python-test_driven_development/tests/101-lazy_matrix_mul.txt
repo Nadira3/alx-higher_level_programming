@@ -11,7 +11,7 @@ ValueError: shapes (1,4) and (2,2) not aligned: 4 (dim 1) != 2 (dim 0)
 >>> print(matrix_mul("string", [[3, 4], [5, 6]]))
 Traceback (most recent call last):
  ...
-TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U6') dtype('<U6') dtype('<U6')
+TypeError: Scalar operands are not allowed, use '*' instead
 >>> print(matrix_mul([[3, 4], [5, 6]], (1, 2)))
 [11 17]
 >>> print(matrix_mul([[1, 2]], [[3, 4], [(2, 3), 6]]))
@@ -21,7 +21,7 @@ ValueError: setting an array element with a sequence.
 >>> print(matrix_mul([[1, 2], [3, "str"]], [[1, 2], [3, 4]]))
 Traceback (most recent call last):
  ...
-ValueError: data type must provide an itemsize
+ValueError: invalid data type for einsum
 >>> print(matrix_mul())
 Traceback (most recent call last):
  ...
