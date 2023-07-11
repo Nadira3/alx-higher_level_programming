@@ -5,6 +5,7 @@
     and methods of an object
 """
 
+
 def lookup(obj):
     """
         lookup - finds the list of attributes
@@ -13,4 +14,4 @@ def lookup(obj):
         Returns: dir content
     """
 
-    return list(obj.__dict__)
+    return dir(obj)
