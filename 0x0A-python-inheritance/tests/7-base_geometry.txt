@@ -2,24 +2,18 @@
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[ValueError] age must be greater than 0
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[ValueError] distance must be greater than 0
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+ ...
+TypeError: name must be an integer
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ ...
+ValueError: age must be greater than 0
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ ...
+ValueError: distance must be greater than 0
 >>> bg.integer_validator("width", 89)
 >>> dir(bg)
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
@@ -27,30 +21,22 @@
 Traceback (most recent call last):
  ...
 Exception: area() is not implemented
->>> try:
-...     bg.integer_validator("name", [])
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("name", (1, 2))
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("name", [2, 4, 5])
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("name", 2, 4, 5)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[TypeError] BaseGeometry.integer_validator() takes 3 positional arguments but 5 were given
+>>> bg.integer_validator("name", [])
+Traceback (most recent call last):
+ ...
+TypeError: name must be an integer
+>>> bg.integer_validator("name", (1, 2))
+Traceback (most recent call last):
+ ...
+TypeError: name must be an integer
+>>> bg.integer_validator("name", [2, 4, 5])
+Traceback (most recent call last):
+ ...
+TypeError: name must be an integer
+>>> bg.integer_validator("name", 2, 4, 5)
+Traceback (most recent call last):
+ ...
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 5 were given
 >>> bg.integer_validator()
 Traceback (most recent call last):
  ...
