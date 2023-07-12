@@ -26,8 +26,6 @@ class BaseGeometry:
 
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
-        return value
-
 
 class Rectangle(BaseGeometry):
     """
@@ -35,7 +33,10 @@ class Rectangle(BaseGeometry):
     """
 
     def __init__(self, width, height):
-        BaseGeometry.__init__(self)
+        """
+            init method for Rectangle class
+        """
+
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
