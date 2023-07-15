@@ -25,6 +25,6 @@ class Student:
         """
 
         if attrs:
-            return {attr: value for attr, value in \
+            return {attr: value for attr, value in
                     self.__dict__.items() if attr in attrs}
-        return self.__dict__
+        return self.__dict__ if len(attrs) else {}
