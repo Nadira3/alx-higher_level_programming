@@ -5,12 +5,9 @@
 """
 
 
-import json
-
-
 def class_to_json(obj):
     """
         converts a class object to json
     """
 
-    return json.loads(json.dumps(obj.__dict__))
+    return obj.__dict__
