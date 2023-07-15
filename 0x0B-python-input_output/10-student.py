@@ -27,4 +27,4 @@ class Student:
         if attrs:
             return {attr: value for attr, value in
                     self.__dict__.items() if attr in attrs}
-        return self.__dict__ if len(attrs) else {}
+        return self.__dict__ if attrs is None or len(attrs) else {}
