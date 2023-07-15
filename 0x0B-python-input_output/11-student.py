@@ -34,7 +34,7 @@ class Student:
             retrieves a dictionary representation
             of a Student instance
         """
-
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        if json:
+            self.first_name = json["first_name"]
+            self.last_name = json["last_name"]
+            self.age = json["age"]
