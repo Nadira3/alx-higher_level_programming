@@ -40,3 +40,16 @@ class Square(Rectangle):
 
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """ updates an object instance attributes """
+
+        if not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            attr = ['id', 'size', 'x', 'y']
+            i = 0
+            for arg in args:
+                setattr(self, attr[i], arg)
+                i += 1
