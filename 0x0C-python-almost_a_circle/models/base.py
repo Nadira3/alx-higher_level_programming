@@ -53,3 +53,8 @@ class Base:
     def create(cls, **dictionary):
         dummy = cls.__init__(3, 1, 1)
         return dummy.update(dictionary)
+
+    @classmethod
+    def load_from_file(cls):
+        file = cls.__name + ".json"
+        return json.load(file)
