@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 """
-    rectangle module
-    defines a rectangle class
+    rectangle module defines a rectangle class
 """
 
 
 from models.base import Base
+
 
 class Rectangle(Base):
     """
@@ -115,17 +115,20 @@ class Rectangle(Base):
             if (self.x):
                 print(" " * self.x)
             print("#" * self.width)
-    
+
     def __str__(self):
         """ print implementation in class """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} -\
+                {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """ updates an object instance attributes """
+
         if not args:
             for key, value in kwargs:
+                pass
         else:
-           attr = ['id', 'width', 'height', 'x', 'y']
-           i = 0
-           for arg in args:
-               i += 1
+            attr = ['id', 'width', 'height', 'x', 'y']
+            i = 0
+            for arg in args:
+                i += 1
