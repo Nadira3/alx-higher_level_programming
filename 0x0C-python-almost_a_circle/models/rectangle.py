@@ -4,6 +4,7 @@
     rectangle module
 """
 
+from models.base import Base
 
 class Rectangle(Base):
     """
@@ -12,7 +13,7 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        Base.__init__(id)
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -110,10 +111,10 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         if not args:
             for key, value in kwargs:
-                self.f"{key}" = value
+                self.key = value
         else:
            attr = ['id', 'width', 'height', 'x', 'y']
            i = 0
            for arg in args:
-               self.f"{attr[i]}" = arg
+               self.attr[i] = arg
                i += 1
