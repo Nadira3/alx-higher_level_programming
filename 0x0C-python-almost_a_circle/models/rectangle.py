@@ -113,7 +113,7 @@ class Rectangle(Base):
                 num -= 1
                 continue
             if (self.x):
-                print(" " * self.x)
+                print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
