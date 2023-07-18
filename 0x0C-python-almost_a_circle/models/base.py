@@ -59,7 +59,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dum = cls(3, 1, 2)
+            dum = cls(3, 1)
         elif cls.__name__ == "Square":
             dum = cls(3)
         else:
