@@ -5,6 +5,9 @@
 """
 
 
+import json
+
+
 class Base:
     """
         'base' of all other classes in this project
@@ -18,3 +21,11 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        """
+            returns the JSON string representation
+            of list_dictionaries
+        """
+
+        return json.dumps(list_dictionaries)
