@@ -59,12 +59,13 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 2)
-        if cls.__name__ == "Square":
-            dummy = cls(3)
-        for key, value in dictionary.items():
-            setattr(dummy, key, value)
-        return dummy
+            dum = cls(3, 1, 2)
+        elif cls.__name__ == "Square":
+            dum = cls(3, 2)
+        else:
+            dum = None
+        dum.update(**dictionary)
+        return dum
 
     @classmethod
     def load_from_file(cls):
