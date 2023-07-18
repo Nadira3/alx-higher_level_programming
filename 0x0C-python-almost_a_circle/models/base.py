@@ -61,7 +61,7 @@ class Base:
         if cls.__name__ == "Rectangle":
             dum = cls(3, 1, 2)
         elif cls.__name__ == "Square":
-            dum = cls(3, 2)
+            dum = cls(3)
         else:
             dum = None
         dum.update(**dictionary)
