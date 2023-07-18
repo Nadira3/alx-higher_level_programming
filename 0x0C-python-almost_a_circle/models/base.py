@@ -70,4 +70,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         file = cls.__name__ + ".json"
-        return json.load(file)
+        with open(file, "r", encoding="utf-8") as f:
+            content = f.read()
+        pystring = cls.from_json_string(content)
+
+        return [cls.create(**instance) for instance in pystring]
