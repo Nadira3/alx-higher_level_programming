@@ -111,10 +111,8 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         if not args:
             for key, value in kwargs:
-                self.key = value
         else:
            attr = ['id', 'width', 'height', 'x', 'y']
            i = 0
            for arg in args:
-               self.attr[i] = arg
                i += 1
