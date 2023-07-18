@@ -62,7 +62,8 @@ class Base:
             dummy = cls(1, 2)
         if cls.__name__ == "Square":
             dummy = cls(3)
-        dummy.update(dictionary)
+        for key, value in dictionary.items():
+            setattr(dummy, key, value)
         return dummy
 
     @classmethod
