@@ -28,6 +28,8 @@ class Base:
             returns the JSON string representation
             of list_dictionaries
         """
+        if not list_dictionaries:
+            return "[]"
 
         return json.dumps(list_dictionaries)
 
@@ -40,23 +42,22 @@ class Base:
             else:
                 f.write(cls.to_json_string(list_objs))
 
-    @staticmethod
     def from_json_string(json_string):
         """
             returns the JSON string representation
             of list_dictionaries
         """
 
-        if json_string is None:
+        if not json_string:
             return "[]"
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls.__init__(3, 1, 1)
+        dummy = cls(3, 1, 1)
         return dummy.update(dictionary)
 
     @classmethod
     def load_from_file(cls):
-        file = cls.__name + ".json"
+        file = cls.__name__ + ".json"
         return json.load(file)
