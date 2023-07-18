@@ -124,9 +124,9 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ updates an object instance attributes """
-        
+
         if not args:
-            for key, value in kwargs:
+            for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
             attr = ['id', 'width', 'height', 'x', 'y']
