@@ -86,7 +86,7 @@ class Rectangle(Base):
 
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, y):
         """ setter unction for variable x """
 
