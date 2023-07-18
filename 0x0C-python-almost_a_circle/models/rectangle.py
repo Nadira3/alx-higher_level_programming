@@ -118,8 +118,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ print implementation in class """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} -\
-                {self.width}/{self.height}"
+        a = f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+        b = f"{self.width}/{self.height}"
+        return a + b
 
     def update(self, *args, **kwargs):
         """ updates an object instance attributes """
