@@ -40,8 +40,12 @@ class Base:
             if list_objs is None:
                 f.write(cls.to_json_string([]))
             else:
-                f.write(cls.to_json_string(list_objs))
+                result = []
+                for arg in list_objs:
+                    result.append(cls.to_dictionary(arg))
+                f.write(cls.to_json_string(result))
 
+    @staticmethod
     def from_json_string(json_string):
         """
             returns the JSON string representation
