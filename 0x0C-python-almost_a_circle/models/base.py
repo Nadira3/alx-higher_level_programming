@@ -33,16 +33,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        flist = ["Rectangle", "Square"]
-        if list_objs is None:
-            for arg in flist:
-                file = arg + ".json"
-            with open(file, "w", encoding="utf-8") as f:
+        file = cls.__name__ + ".json"
+        with open(file, "w", encoding="utf-8") as f:
+            if list_objs is None:
                 f.write(cls.to_json_string([]))
-        else:
-            for arg in list_objs:
-                file = str(arg.__class__.__name__) + ".json"
-            with open(file, "w", encoding="utf-8") as f:
+            else:
                 f.write(cls.to_json_string(list_objs))
 
     @staticmethod
@@ -56,3 +51,5 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        dummy = cls.__name__.__init.__(2, 2)
+        return dummy.update(dictionary)
