@@ -58,8 +58,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls(3, 1, 1)
-        return dummy.update(dictionary)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 2)
+        if cls.__name__ == "Square":
+            dummy = cls(3)
+        dummy.update(dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
