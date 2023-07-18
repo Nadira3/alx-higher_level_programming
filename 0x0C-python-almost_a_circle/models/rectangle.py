@@ -2,7 +2,9 @@
 
 """
     rectangle module
+    defines a rectangle class
 """
+
 
 from models.base import Base
 
@@ -13,6 +15,11 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+            constructor function
+            initializes an object instance
+        """
+
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -92,9 +99,13 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ computes the area of the rectangle """
+
         return self.width * self.height
 
     def display(self):
+        """ prints a rectangle using a symbol # """
+
         num = self.y
         for count in range(self.height + num):
             if num:
@@ -106,9 +117,11 @@ class Rectangle(Base):
             print("#" * self.width)
     
     def __str__(self):
+        """ print implementation in class """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
+        """ updates an object instance attributes """
         if not args:
             for key, value in kwargs:
         else:
