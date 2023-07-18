@@ -51,5 +51,5 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls.__name__.__init.__(2, 2)
+        dummy = cls.__init__(3, 1, 1)
         return dummy.update(dictionary)
