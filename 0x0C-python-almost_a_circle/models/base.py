@@ -6,6 +6,8 @@
 
 
 import json
+import csv
+import io
 
 
 class Base:
@@ -78,3 +80,70 @@ class Base:
 
         pystring = cls.from_json_string(content)
         return [cls.create(**instance) for instance in pystring]
+
+    @staticmethod
+    def to_csv_string(list_file):
+        """
+            returns the CSV string representation
+            of list_dictionaries
+        """
+
+    @staticmethod
+    def to_csv_string(list_dictionaries):
+        """
+            Returns the CSV string representation of list_dictionaries.
+        """
+        if not list_dictionaries:
+            return ""
+
+        csv_buffer = io.StringIO()
+        fieldnames = list_dictionaries[0].keys()
+        csv_writer = csv.writer(csv_buffer)
+        csv_writer.writerow(fieldnames)
+
+        for dictionary in list_dictionaries:
+            csv_writer.writerow(dictionary.values())
+
+        csv_string = csv_buffer.getvalue()
+        return csv_string
+
+    @staticmethod
+    def from_csv_string(csv_string):
+        """
+            returns the JSON string representation
+            of list_dictionaries
+        """
+
+        if not csv_string:
+            return []
+        csv_buffer = io.StringIO(csv_string)
+        csv_reader = csv.DictReader(csv_buffer)
+        list_dictionaries = [row for row in csv_reader]
+        return list_dictionaries
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        file = cls.__name__ + ".csv"
+        with open(file, "w", encoding="utf-8") as f:
+            result = []
+            if list_objs is None:
+                f.write(cls.to_csv_string([]))
+            else:
+                for arg in list_objs:
+                    result.append(cls.to_dictionary(arg))
+                f.write(cls.to_csv_string(result))
+            return result
+
+    @classmethod
+    def load_from_file_csv(cls):
+        file = cls.__name__ + ".csv"
+        try:
+            with open(file, "r", encoding="utf-8") as f:
+                content = f.read()
+                list_dict = cls.from_csv_string(content)
+                for dic in list_dict:
+                    for key, value in dic.items():
+                        dic[key] = int(value)
+            return [cls.create(**instance) for instance in list_dict]
+        except FileNotFoundError:
+            return []
