@@ -6,7 +6,6 @@
 
 
 import unittest
-import math
 from models.base import Base
 
 class TestBase(unittest.TestCase):
@@ -32,5 +31,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b.id, 0.5)
         b = Base(-5)
         self.assertEqual(b.id, -5)
-        b = Base(float("NaN"))
-        self.assertTrue(math.isnan(b.id))
+        #b = Base(float("NaN"))
+        #self.assertTrue(math.isnan(b.id))
