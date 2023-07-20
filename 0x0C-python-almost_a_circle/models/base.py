@@ -147,3 +147,7 @@ class Base:
             return [cls.create(**instance) for instance in list_dict]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        ...
