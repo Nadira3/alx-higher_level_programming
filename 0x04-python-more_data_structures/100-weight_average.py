@@ -9,7 +9,3 @@ def weight_average(my_list=[]):
             total += product
             num += arg[1]
     return total / num if my_list else 0
-
-list = []
-result = weight_average(list)
-print("Av: {:0.2f}".format(result))
