@@ -13,7 +13,7 @@ void print_python_bytes(PyObject *p)
 	char *ptr = NULL;
 
 	printf("[.] bytes object info\n");
-	bits = (PyBytesObject*)p;
+	bits = (PyBytesObject *)p;
 	if (PyBytes_Check(bits))
 	{
 		n = bits->ob_base.ob_size;
@@ -32,7 +32,7 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_list_info - Prints basic information about a Python list
+ * print_python_list - Prints basic information about a Python list
  * @p: The Python list to analyze
  *
  * Return: None
@@ -41,10 +41,10 @@ void print_python_list(PyObject *p)
 {
 	Py_ssize_t i, n;
 	PyObject **item, *element;
-	PyListObject *list = (PyListObject*)p;
+	PyListObject *list = (PyListObject *)p;
 	Py_ssize_t allocated = list->allocated;
 
-	n = list->ob_size;
+	n = PyList_Size(p);
 	if (n < 0)
 		return;
 	printf("[*] Python list info\n");
@@ -52,7 +52,7 @@ void print_python_list(PyObject *p)
 	printf("[*] Allocated = %ld\n", allocated);
 	for (i = 0; i < n; i++)
 	{
-		item = list->ob_items;
+		item = list->ob_item;
 		element = item[i];
 		if (!item)
 			break;
