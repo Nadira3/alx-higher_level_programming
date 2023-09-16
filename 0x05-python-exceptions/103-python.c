@@ -1,4 +1,5 @@
 #include <Python.h>
+#include <float.h>
 
 /**
  * print_python_float - Prints basic information about a Python float object
@@ -13,7 +14,7 @@ void print_python_float(PyObject *p)
 	bits = (PyFloatObject *)p;
 	printf("[.] float object info\n");
 	if (PyFloat_Check(bits))
-		printf("  value: %lf\n", bits->ob_fval);
+		printf("  value: %.*g\n", DBL_DIG, bits->ob_fval);
 	else
 		printf("  [ERROR] Invalid Float Object\n");
 }
