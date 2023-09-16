@@ -12,9 +12,8 @@ def safe_print_integer_err(value):
                 value_type = str(type_list[item])
                 value = ""
                 i = 0
-                while value_type[i] != '<':
+                while value_type[i] != '\'':
                     i += 1
-                i += 1
                 while value_type[i] != '>':
                     value += value_type[i]
                     i += 1
