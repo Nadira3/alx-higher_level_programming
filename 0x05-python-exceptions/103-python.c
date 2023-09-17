@@ -10,11 +10,18 @@
 void print_python_float(PyObject *p)
 {
 	PyFloatObject *bits;
+	double value;
 
 	bits = (PyFloatObject *)p;
 	printf("[.] float object info\n");
 	if (PyFloat_Check(bits))
-		printf("  value: %.*g\n", DBL_DIG, bits->ob_fval);
+	{
+		value = bits->ob_fval;
+		if (value - (int)value != 0.0)
+			printf("  value: %.*g\n", DBL_DIG, value);
+		else
+			printf("  value: %.1f\n", value);
+	}
 	else
 		printf("  [ERROR] Invalid Float Object\n");
 }
