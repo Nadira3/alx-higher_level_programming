@@ -15,8 +15,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         self.increment_instance()
 
     @property
@@ -52,22 +52,22 @@ class Rectangle:
         self.__height = height
 
     def area(self):
-        return self.__height * self.__width
+        return self.height * self.width
 
     def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return 0
         else:
-            return 2 * (self.__height + self.__width)
+            return 2 * (self.height + self.width)
 
     def __str__(self):
         if self.print_symbol:
             return self.instprint()
         else:
-            return self.classprint(self.__width, self.__height)
+            return self.classprint(self.width, self.height)
 
     def __repr__(self):
-        return f"Rectangle({self.__width}, {self.__height})"
+        return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         print("Bye rectangle...")
@@ -92,9 +92,9 @@ class Rectangle:
 
     def instprint(self):
         result = ""
-        for h in range(self.__height):
-            end = "" if h == self.__height - 1 else "\n"
-            result += (str(self.print_symbol) * self.__width)
+        for h in range(self.height):
+            end = "" if h == self.height - 1 else "\n"
+            result += (str(self.print_symbol) * self.width)
             result += end
         return result
 
