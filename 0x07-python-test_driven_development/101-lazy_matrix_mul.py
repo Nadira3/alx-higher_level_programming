@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-	multiplies a pair of matrices using numpy
+    multiplies a pair of matrices using numpy
 """
 
 
 import numpy as np
+
 
 def lazy_matrix_mul(m_a, m_b):
     """
