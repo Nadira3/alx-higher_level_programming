@@ -10,10 +10,11 @@ class LockedClass:
     """
 
     def __setattr__(self, name, value):
-        if name not in ["first_name", "dict"]:
+        if name != "first_name":
             raise AttributeError("'LockedClass' object has no attribute '{}'".format(name))
         super().__setattr__(name, value)
 
-    @property
-    def dict(self):
-        return {k:v for k,v in self.__dict__.items() if k == "first_name"}
+    def __getattr__(self, name):
+        if name not in self.__dict__:
+            raise AttributeError("'LockedClass' object has no attribute '{}'".format(name))
+        super().__getattr__(name)
