@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Log parse module """
+
+
 import sys
 
 count = 0
