@@ -30,9 +30,9 @@ if __name__ == "__main__":
             statusCode = int(line.split()[-2])
 
             if statusCode in obj:
-                obj[statusCode] += 1
+                obj[str(statusCode)] += 1
             else:
-                obj[statusCode] = 1
+                obj[str(statusCode)] = 1
 
             count += 1
             total_size += int(line.split()[-1])
