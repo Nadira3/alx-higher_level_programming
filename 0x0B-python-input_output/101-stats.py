@@ -38,5 +38,3 @@ for line in sys.stdin:
         total_size += int(line.split()[-1])
     except (ValueError, IndexError):
         continue
-
-help_print()
