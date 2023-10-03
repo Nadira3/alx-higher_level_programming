@@ -14,6 +14,10 @@ if __name__ == "__main__":
         """ module documentation """
         print(f"File size: {total_size}")
         for key, value in sorted(obj.items()):
+            try:
+                code = int(key)
+            except ValueError:
+                continue
             print(f"{key}: {value}")
 
     def handle_interrupt(signal, frame):
