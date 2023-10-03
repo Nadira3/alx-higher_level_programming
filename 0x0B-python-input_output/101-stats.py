@@ -26,7 +26,6 @@ if __name__ == "__main__":
         if count >= 10 or line == "":
             count = 0
             handle_print()
-            total_size = 0
         try:
             statusCode = line.split()[-2]
 
