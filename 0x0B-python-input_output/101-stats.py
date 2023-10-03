@@ -14,7 +14,7 @@ try:
         if count >= 10:
             count = 0
             print(f"File size: {total_size}")
-            for key, value in obj.items():
+            for key, value in sorted(obj.items()):
                 print(f"{key}: {value}")
             total_size = 0
         statusCode = line.split()[-2]
@@ -28,5 +28,5 @@ try:
         total_size += int(line.split()[-1])
 except KeyboardInterrupt:
         print(f"File Size: {total_size}")
-        for key, value in obj.items():
+        for key, value in sorted(obj.items()):
             print(f"{key}: {value}")
