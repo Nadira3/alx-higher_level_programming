@@ -3,19 +3,29 @@
 
 
 import sys
+import signal
 
 count = 0
 total_size = 0
 obj = {}
 statusCode = ""
 
-try:
-    for line in sys.stdin:
+def handle_print():
+    print(f"File size: {total_size}")
+    for key, value in sorted(obj.items()):
+        print(f"{key}: {value}")
+
+def handle_interrupt(signal, frame):
+    handle_print()
+    sys.exit(1)
+
+signal.signal(signal.SIGINT, handle_interrupt)
+
+for line in sys.stdin:
+    try:
         if count >= 10 or line == "":
             count = 0
-            print(f"File size: {total_size}")
-            for key, value in sorted(obj.items()):
-                print(f"{key}: {value}")
+            handle_print()
             total_size = 0
         statusCode = line.split()[-2]
 
@@ -26,7 +36,5 @@ try:
 
         count += 1
         total_size += int(line.split()[-1])
-except KeyboardInterrupt:
-        print(f"File Size: {total_size}")
-        for key, value in sorted(obj.items()):
-            print(f"{key}: {value}")
+    except (ValueError, IndexError):
+        continue
