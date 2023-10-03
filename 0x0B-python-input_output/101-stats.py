@@ -11,7 +11,7 @@ statusCode = ""
 
 try:
     for line in sys.stdin:
-        if count >= 10:
+        if count >= 10 or line == "":
             count = 0
             print(f"File size: {total_size}")
             for key, value in sorted(obj.items()):
