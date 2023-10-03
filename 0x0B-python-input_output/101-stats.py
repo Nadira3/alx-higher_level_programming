@@ -27,12 +27,12 @@ if __name__ == "__main__":
             count = 0
             handle_print()
         try:
-            statusCode = int(line.split()[-2])
+            statusCode = line.split()[-2]
 
             if statusCode in obj:
-                obj[str(statusCode)] += 1
+                obj[statusCode] += 1
             else:
-                obj[str(statusCode)] = 1
+                obj[statusCode] = 1
 
             count += 1
             total_size += int(line.split()[-1])
