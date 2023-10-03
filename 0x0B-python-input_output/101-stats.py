@@ -11,22 +11,24 @@ obj = {}
 statusCode = ""
 
 def handle_print():
+    """ module documentation """
     print(f"File size: {total_size}")
     for key, value in sorted(obj.items()):
         print(f"{key}: {value}")
 
 def handle_interrupt(signal, frame):
+    """ module documentation """
     handle_print()
     sys.exit(1)
 
 signal.signal(signal.SIGINT, handle_interrupt)
 
 for line in sys.stdin:
+    if count >= 10 or line == "":
+        count = 0
+        handle_print()
+        total_size = 0
     try:
-        if count >= 10 or line == "":
-            count = 0
-            handle_print()
-            total_size = 0
         statusCode = line.split()[-2]
 
         if statusCode in obj:
@@ -38,3 +40,5 @@ for line in sys.stdin:
         total_size += int(line.split()[-1])
     except (ValueError, IndexError):
         continue
+
+help_print()
