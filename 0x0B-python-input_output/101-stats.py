@@ -27,7 +27,7 @@ if __name__ == "__main__":
             count = 0
             handle_print()
         try:
-            statusCode = line.split()[-2]
+            statusCode = int(line.split()[-2])
 
             if statusCode in obj:
                 obj[statusCode] += 1
