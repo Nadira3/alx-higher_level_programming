@@ -10,7 +10,7 @@ def add_attribute(obj, key, value):
         __setattr__ with error typecheck
     """
 
-    if not isinstance(obj, object) and key not in type(obj).__slots__:
+    if obj.__class__.__name__ in ("float", "dict", "int", "str", "tuple", "list")\
+            or hasattr(obj, "__slots__") and key not in obj.__class__.__slots__:
         raise TypeError("can't add new attribute")
-    else:
-        obj.__setattr__(key, value)
+    obj.__setattr__(key, value)
