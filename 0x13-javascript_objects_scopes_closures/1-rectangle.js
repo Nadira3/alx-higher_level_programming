@@ -1,7 +1,8 @@
 #!/usr/bin/node
 class Rectangle {
-  sleep () {
-    console.log('zzzzzzz');
+  constructor (w, h) {
+    this.width = w;
+    this.height = h;
   }
 }
 module.exports = Rectangle;
