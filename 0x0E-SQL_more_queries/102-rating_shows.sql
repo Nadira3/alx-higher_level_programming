@@ -5,8 +5,8 @@
 	-- You can use only one SELECT statement
 	-- The database name will be passed as an argument of the mysql command
 
-SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS 'rating sum'
+SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS 'rating'
 	FROM tv_shows
 	JOIN tv_show_ratings ON tv_shows.id = tv_show_ratings.show_id
 	GROUP BY tv_shows.title
-	ORDER BY `rating sum` DESC;
+	ORDER BY `rating` DESC;
