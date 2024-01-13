@@ -14,11 +14,7 @@
 #    Results must be displayed as they are in the example below
 #    Your code should not be executed when imported
 
-""" 
-    a module that lists all states starting with
-    the letter N from the database hbtn_0e_0_usa 
-
-"""
+""" a module that lists all states from the database hbtn_0e_0_usa """
 
 if __name__ == '__main__':
     import sys
@@ -30,8 +26,9 @@ if __name__ == '__main__':
                 host="localhost", port=3306, user=argv[1],
                 passwd=argv[2], db=argv[3], charset="utf8")
         cur = conn.cursor()
-        cur.execute("SELECT * FROM states
-                    WHERE name LIKE 'N%' ORDER BY id ASC")
+        cur.execute(
+                "SELECT * FROM states WHERE name LIKE
+                'N%' ORDER BY id ASC")
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
