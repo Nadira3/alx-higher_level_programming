@@ -31,7 +31,7 @@ if __name__ == '__main__':
         query_rows = cur.fetchall()
         rowlen = len(query_rows)
         for idx in range(rowlen):
-            print(query_rows[idx][0], end=" " if idx < rowlen - 1 else "")
+            print(query_rows[idx][0], end=", " if idx < rowlen - 1 else "")
         print()
         cur.close()
         conn.close()
