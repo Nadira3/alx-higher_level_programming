@@ -6,4 +6,5 @@ JavaScript is amazing
 nadira@ubuntu:~/0x12$ 
 nadira@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
 nadira@ubuntu:~/0x12$
-```
+
+Copyright © 2024 ALX, All rights reserved.```
