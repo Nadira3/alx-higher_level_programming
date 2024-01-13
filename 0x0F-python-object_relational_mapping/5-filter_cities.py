@@ -26,11 +26,10 @@ if __name__ == '__main__':
         cur = conn.cursor()
         cur.execute('''SELECT UNIQUE cities.name FROM cities 
                     JOIN states ON cities.state_id=states.id 
-                    WHERE states.name LIKE BINARY %s 
+                    WHERE states.name=%s 
                     ORDER BY cities.id ASC''', (argv[4], ))
         query_rows = cur.fetchall()
-        rowlen = len(query_rows)
-        for idx in range(rowlen):
-            print(query_rows[idx][0], end=", " if idx < rowlen - 1 else "\n")
+        rows = list(row[0] for row in query_rows)
+        print(*rows, sep=", ")
         cur.close()
         conn.close()
