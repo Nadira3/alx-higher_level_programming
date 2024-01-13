@@ -9,12 +9,13 @@
 #   Results must be displayed as they are in the example below
 #   Your code should not be executed when imported
 
-import sys
-import MySQLdb
-
-argv = sys.argv
-db = MySQLdb.connect(host="localhost@3306", user=argv[1], passwd=argv[2], db=argv[3])
-c=db.cursor()
-c.execute("SELECT * FROM states ORDER BY id;")
-for i in c:
-    print(c.fetchone())
+if __name__ == '__main__':
+    import sys
+    import MySQLdb
+    
+    argv = sys.argv
+    db = MySQLdb.connect(host="localhost@3306", user=argv[1], passwd=argv[2], db=argv[3])
+    c=db.cursor()
+    c.execute("SELECT * FROM states ORDER BY id;")
+    for i in c:
+        print(c.fetchone())
