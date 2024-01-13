@@ -20,10 +20,9 @@ if __name__ == '__main__':
 
     argv = sys.argv
     if len(argv) == 5:
-        #conn = MySQLdb.connect(
-         #       host="localhost", port=3306, user=argv[1],
-          #      passwd=argv[2], db=argv[3], charset="utf8")
-        conn = MySQLdb.connect(user=argv[2], db=argv[3])
+        conn = MySQLdb.connect(
+                host="localhost", port=3306, user=argv[1],
+                passwd=argv[2], db=argv[3], charset="utf8")
         cur = conn.cursor()
         cur.execute('''SELECT cities.name FROM cities 
                     JOIN states ON cities.state_id=states.id 
