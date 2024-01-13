@@ -32,8 +32,8 @@ if __name__ == '__main__':
                 passwd=argv[2], db=argv[3], charset="utf8")
         cur = conn.cursor()
         cur.execute(
-                f"""SELECT * FROM states WHERE name LIKE BINARY
-                {argv[4]} ORDER BY id ASC""")
+                '''SELECT * FROM states WHERE name LIKE BINARY {}
+                ORDER BY id ASC'''.format(argv[4]))
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
