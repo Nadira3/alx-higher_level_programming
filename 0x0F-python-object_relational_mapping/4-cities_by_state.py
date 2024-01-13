@@ -19,7 +19,7 @@ if __name__ == '__main__':
     import MySQLdb
 
     argv = sys.argv
-    if len(argv) == 5:
+    if len(argv) == 4:
         conn = MySQLdb.connect(
                 host="localhost", port=3306, user=argv[1],
                 passwd=argv[2], db=argv[3], charset="utf8")
