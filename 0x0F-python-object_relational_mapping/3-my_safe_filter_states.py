@@ -5,7 +5,7 @@
 # name matches the argument.
 #
 #    Your script should take 4 arguments:
-#    - mysql username, mysql password, database name and 
+#    - mysql username, mysql password, database name and
 #    - state name searched (no argument validation needed)
 #    You must use the module MySQLdb (import MySQLdb)
 #    Script connects to MySQL server running on localhost@3306
@@ -14,8 +14,8 @@
 #    Results must be displayed as they are in the example below
 #    Your code should not be executed when imported
 
-""" 
-    a module that lists all states starting 
+"""
+    a module that lists all states starting
     from the database hbtn_0e_0_usa that matches
     the argument given
 
