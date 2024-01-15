@@ -16,11 +16,9 @@
 import sys
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
-
-argv = sys.argv
 Base = declarative_base()
-
 
 class State(Base):
     """ State class definition """
@@ -28,3 +26,5 @@ class State(Base):
     ...
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128))
+
+    cities = relationship("City", back_populates="state")
