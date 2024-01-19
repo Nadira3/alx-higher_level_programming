@@ -30,7 +30,20 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state, city in session.query(State, City).\
-            filter(State.id == City.state_id).order_by(City.id).all():
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    new_state = State(name='California')
+    
+    # Step x: Add the State instance and City instances to the session
+    session.add(new_state)
+    session.commit()  # Commit the State first to get its ID
+    
+    # Step x: Create instances of the City class
+    new_city = City(name='San Francisco', state_id=new_state.id)
+    
+    # Set the state attribute for each City instance
+    new_state.cities = new_city
+    
+    session.add(new_city)
+    
+    # Step x: Commit the changes to persist them in the database
+    session.commit()
     session.close()
