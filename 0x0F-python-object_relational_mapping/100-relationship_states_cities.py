@@ -17,7 +17,7 @@
 
 """ Start link class to table in database """
 import sys
-from relationship_state import Base, State
+from relationship_state import State, Base
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -38,9 +38,6 @@ if __name__ == "__main__":
 
     # Step x: Create instances of the City class
     new_city = City(name='San Francisco', state_id=new_state.id)
-
-    # Set the state attribute for each City instance
-    new_state.cities = new_city
 
     session.add(new_city)
 
