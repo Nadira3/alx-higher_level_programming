@@ -20,6 +20,7 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+
 class State(Base):
     """ State class definition """
     __tablename__ = 'states'
