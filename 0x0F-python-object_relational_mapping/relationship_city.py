@@ -20,8 +20,8 @@
 """
 import sys
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from model_state import Base
 from sqlalchemy.orm import relationship
-from model_state import State, Base
 
 
 class City(Base):
