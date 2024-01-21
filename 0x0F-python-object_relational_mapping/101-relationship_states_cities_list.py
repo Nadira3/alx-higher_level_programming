@@ -3,6 +3,7 @@
 # lists all State objects, and corresponding City objects,
 #   contained in the database hbtn_0e_101_usa
 
+""" lists all objects models """
 import sys
 from relationship_state import Base, State
 from relationship_city import City
